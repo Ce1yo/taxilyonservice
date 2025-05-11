@@ -569,25 +569,26 @@ header {
 }
 
 @media (max-width: 768px) {
+    .zones {
+        padding: 3rem 0;
+    }
+
     .zones-content {
         grid-template-columns: 1fr;
-        padding: 0;
         gap: 2rem;
     }
 
-    .zones-text {
+    .zones-cards {
+        grid-template-columns: 1fr;
         padding: 1rem;
-        width: calc(100% - 2rem);
-        margin: 0 auto;
     }
 
     .map-container {
-        width: calc(100% - 2rem);
-        margin: 0 auto 2rem auto;
+        margin: 0;
     }
 
-    .map {
-        width: 100%;
+    .zone-card {
+        padding: 1.5rem;
     }
 }
 
@@ -785,15 +786,40 @@ header {
     border: 3px solid var(--white);
 }
 
-.zones-text {
-    padding: 2rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+.zones-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
-.zones-text:hover {
+.zone-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--light-bg);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.zone-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-color);
+}
+
+.zone-card i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.zone-card h3 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin: 0;
 }
 
 .zones-text h3 {
