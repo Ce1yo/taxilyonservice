@@ -571,11 +571,23 @@ header {
 @media (max-width: 768px) {
     .zones-content {
         grid-template-columns: 1fr;
+        padding: 0;
+        gap: 2rem;
     }
-    
+
+    .zones-text {
+        padding: 1rem;
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+    }
+
     .map-container {
-        aspect-ratio: 16/9;
-        margin-bottom: 2rem;
+        width: calc(100% - 2rem);
+        margin: 0 auto 2rem auto;
+    }
+
+    .map {
+        width: 100%;
     }
 }
 
@@ -774,10 +786,14 @@ header {
 }
 
 .zones-text {
-    background: var(--white);
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.zones-text:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
 }
 
 .zones-text h3 {
