@@ -570,23 +570,36 @@ header {
 
 @media (max-width: 768px) {
     .zones {
-        padding: 2rem 0;
+        padding: 0;
     }
 
     .zones-content {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin: 1rem 0;
+        gap: 1rem;
+        margin: 0;
     }
 
     .map-container {
-        height: 250px;
-        margin: 0 1rem;
+        height: 200px;
+        margin: 0;
+        border-radius: 0;
+        overflow: hidden;
     }
 
     .map {
         height: 100%;
         width: 100%;
+        transform: none;
+        border-radius: 0;
+    }
+
+    .map img {
+        border-radius: 0;
+        border: none;
+    }
+
+    .zones-cards {
+        margin-top: 1rem;
     }
 
     .zone-card i {
