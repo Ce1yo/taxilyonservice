@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyon Taxi Service - Votre chauffeur de confiance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <span>TaxiSûr</span>
+            </div>
+
+            <button class="hamburger-menu" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#zones">Zones desservies</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#reservation?service=medical" class="nav-medical">Courses conventionnées</a></li>
+                <li><a href="#reservation" class="btn-reservation">Réserver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-content">
+                <h1>Votre taxi à Lyon 24h/24 et 7j/7</h1>
+                <p>Transport professionnel, confortable et ponctuel dans toute la région lyonnaise</p>
+                <div class="hero-buttons">
+                    <a href="#reservation" class="btn-primary">Réserver maintenant</a>
+                    <a href="tel:+33634374245" class="btn-secondary"><i class="fas fa-phone"></i> Appeler</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="images/Taxis_Conventionnes_Ile_de_France.png" alt="Taxi Conventionné" class="service-icon">
+                    <h3>Courses Conventionnées</h3>
+                    <p>Transport médical conventionné avec réservation simple</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/Fichier 1bnagba.png" alt="Courses Classiques" class="service-icon">
+                    <h3>Courses Classiques</h3>
+                    <p>Transport standard avec simulation de prix</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/Fichier 3bnagba.png" alt="Transport de Groupe" class="service-icon">
+                    <h3>Courses de Groupe</h3>
+                    <p>Véhicule adapté de 4 à 8 personnes</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-wheelchair service-icon"></i>
+                    <h3>Transport TPMR</h3>
+                    <p>Véhicule adapté aux personnes à mobilité réduite</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/Fichier 2bnagba.png" alt="Mise à Disposition" class="service-icon">
+                    <h3>Mise à Disposition</h3>
+                    <p>Location de taxi à la journée</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tarifs" class="tarifs">
+            <h2>Nos Tarifs</h2>
+            <div class="tarifs-grid">
+                <div class="tarif-card">
+                    <h3>Trajet en ville</h3>
+                    <p class="prix">À partir de 12€</p>
+                    <ul>
+                        <li>Prise en charge immédiate</li>
+                        <li>Prix fixe annoncé à l'avance</li>
+                        <li>Pas de supplément bagage</li>
+                    </ul>
+                </div>
+                <div class="tarif-card">
+                    <h3>Aéroport</h3>
+                    <p class="prix">À partir de 50€</p>
+                    <ul>
+                        <li>Prix forfaitaire</li>
+                        <li>Suivi des vols</li>
+                        <li>30 minutes d'attente offertes</li>
+                    </ul>
+                </div>
+                <div class="tarif-card">
+                    <h3>Forfait journée</h3>
+                    <p class="prix">Sur devis</p>
+                    <ul>
+                        <li>Tarif personnalisé</li>
+                        <li>Chauffeur dédié</li>
+                        <li>Facturation à l'heure</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="zones" class="zones">
+            <h2>Zones Desservies</h2>
+            <div class="zones-content">
+                <div class="map-container">
+                    <div id="zonesMap" class="map"></div>
+                </div>
+                <div class="zones-text">
+                    <div class="zones-card">
+                        <div class="zone-item">
+                            <i class="fas fa-building"></i>
+                            <h3>Lyon Métropole</h3>
+                            <p>Tous les arrondissements de Lyon et la métropole</p>
+                        </div>
+                        <div class="zone-item">
+                            <i class="fas fa-plane"></i>
+                            <h3>Trajet Aéroport</h3>
+                            <p>Transferts vers/depuis Saint-Exupéry 24h/24</p>
+                        </div>
+                        <div class="zone-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h3>Trajet Région</h3>
+                            <p>Déplacements dans toute la région Auvergne-Rhône-Alpes</p>
+                        </div>
+                        <div class="zone-item">
+                            <i class="fas fa-route"></i>
+                            <h3>Longue Distance</h3>
+                            <p>Trajets nationaux et internationaux sur demande</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reservation" class="booking-form">
+            <h2>Réservation en ligne</h2>
+            <form id="reservationForm" class="form-grid">
+                <!-- Sélection du service -->
+                <div class="form-group service-selection form-full-width">
+                    <label>Type de service</label>
+                    <div class="service-cards">
+                        <div class="service-choice-card">
+                            <input type="radio" id="service-standard" name="service" value="standard" required>
+                            <label for="service-standard">
+                                <img src="images/Fichier 1bnagba.png" alt="Courses Standard" class="service-choice-icon">
+                                <h4>Courses Standard</h4>
+                                <p>1-4 personnes</p>
+                            </label>
+                        </div>
+                        <div class="service-choice-card" data-service="medical">
+                            <input type="radio" id="service-medical" name="service" value="medical">
+                            <label for="service-medical">
+                                <img src="images/Taxis_Conventionnes_Ile_de_France.png" alt="Courses Conventionnées" class="service-choice-icon">
+                                <h4>Courses conventionnées</h4>
+                                <p>Véhicule adapté</p>
+                            </label>
+                        </div>
+                        <div class="service-choice-card">
+                            <input type="radio" id="service-groupe" name="service" value="groupe">
+                            <label for="service-groupe">
+                                <img src="images/Fichier 3bnagba.png" alt="Courses de groupe" class="service-choice-icon">
+                                <h4>Courses de groupe</h4>
+                                <p>Véhicule 4-8 personnes</p>
+                            </label>
+                        </div>
+                        <div class="service-choice-card">
+                            <input type="radio" id="service-tpmr" name="service" value="tpmr">
+                            <label for="service-tpmr">
+                                <i class="fas fa-wheelchair service-choice-icon"></i>
+                                <h4>Transport TPMR</h4>
+                                <p>Véhicule adapté PMR</p>
+                            </label>
+                        </div>
+                        <div class="service-choice-card">
+                            <input type="radio" id="service-journee" name="service" value="journee">
+                            <label for="service-journee">
+                                <img src="images/Fichier 2bnagba.png" alt="Journée complète" class="service-choice-icon">
+                                <h4>Journée complète</h4>
+                                <p>Mise à disposition</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informations personnelles -->
+                <div class="horizontal-form-group">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group" id="passengersGroup">
+                        <label for="passengers">Nombre de passagers</label>
+                        <input type="number" id="passengers" name="passengers" min="1" max="8" required>
+                    </div>
+                </div>
+
+                <!-- Adresses et simulateur -->
+                <div class="horizontal-form-group addresses">
+                    <div class="form-group">
+                        <label for="pickup">Adresse de prise en charge</label>
+                        <input type="text" id="pickup" name="pickup" placeholder="Entrez le point de départ" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" name="destination" placeholder="Entrez la destination" required>
+                    </div>
+                </div>
+
+                <!-- Simulateur de prix -->
+                <div id="distancePrice" class="hidden">
+                    <div class="distance-info">
+                        <label>Distance estimée :</label>
+                        <span id="distanceValue">-- km</span>
+                    </div>
+                    <div class="price-info">
+                        <label>Prix estimé :</label>
+                        <span id="priceValue">-- €</span>
+                    </div>
+                </div>
+
+                <!-- Date et heure -->
+                <div class="horizontal-form-group date-time">
+                    <div class="form-group">
+                        <label for="date">Date de prise en charge</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Heure de prise en charge</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+
+                <!-- Blocs spéciaux -->
+                <div class="form-group" id="distancePrice" style="display: none;">
+                    <div class="distance-info">
+                        <label>Distance estimée :</label>
+                        <span id="distanceValue"></span>
+                    </div>
+                    <div class="price-info">
+                        <label>Prix estimé :</label>
+                        <span id="priceValue"></span>
+                    </div>
+                </div>
+
+                <div class="form-group" id="conventionnelFields" style="display: none;">
+                    <label for="numeroSecu">Numéro de sécurité sociale</label>
+                    <input type="text" id="numeroSecu" name="numeroSecu" pattern="[0-9]{15}" placeholder="15 chiffres">
+                </div>
+
+                <div class="form-group" id="journeeMessage" style="display: none;">
+                    <div class="info-message">
+                        <p>Pour une mise à disposition à la journée, le tarif sera communiqué sur demande.</p>
+                        <p>Nous vous contacterons rapidement pour vous faire un devis personnalisé.</p>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Réserver maintenant</button>
+            </form>
+
+            <div class="payment-methods">
+                <h3>Modes de paiement acceptés</h3>
+                <div class="payment-icons">
+                    <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Carte Bancaire</span>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Espèces</span>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-money-check"></i>
+                        <span>Chèque</span>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>TPE Mobile</span>
+                    </div>
+                </div>
+                <p class="payment-note">Paiement sécurisé directement dans le taxi</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Téléphone</h3>
+                        <p><a href="tel:+33400000000">06 34 37 42 45</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:contact@lyontaxi.fr">taxilyonservice@gmail.com</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Adresse</h3>
+                        <p>Lyon et sa région</p>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Lyon Taxi Service</h3>
+                <p>Votre partenaire de confiance pour tous vos déplacements</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liens rapides</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#tarifs">Tarifs</a></li>
+                    <li><a href="#zones">Zones desservies</a></li>
+                    <li><a href="#reservation">Réserver</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> 06 34 37 42 45</p>
+                <p><i class="fas fa-envelope"></i> taxilyonservice@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TaxiSûr. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("M2UfbxYZ-JsEkdC36");
+        })();
+    </script>
+    <script src="script.js"></script>
+    <!-- Google Maps JavaScript API -->
+    <script>
+        function initMapsAPI() {
+            const script = document.createElement('script');
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDgvPhkjv1hjbdvsH5UYaeLckwJ2IqgFyI&libraries=places&callback=initGoogleMaps';
+            script.async = true;
+            document.head.appendChild(script);
+        }
+        window.onload = initMapsAPI;
+    </script>
+</body>
+</html>
