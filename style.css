@@ -917,6 +917,28 @@ header {
     margin: 2rem 0;
 }
 
+@media screen and (max-width: 768px) {
+    .payment-methods {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .payment-icons {
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .payment-icon {
+        width: 60px;
+        height: auto;
+    }
+
+    .payment-methods h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+}
+
 .payment-icon {
     display: flex;
     flex-direction: column;
