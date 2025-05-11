@@ -6,12 +6,26 @@
     <title>Lyon Taxi Service - Votre chauffeur de confiance</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
+    <div class="color-picker">
+        <button class="color-picker-toggle" aria-label="Changer les couleurs">
+            <i class="fas fa-palette"></i>
+        </button>
+        <div class="color-options">
+            <button class="color-option" data-color="#32348e" style="background-color: #32348e;"></button>
+            <button class="color-option" data-color="#2c3e50" style="background-color: #2c3e50;"></button>
+            <button class="color-option" data-color="#c0392b" style="background-color: #c0392b;"></button>
+            <button class="color-option" data-color="#27ae60" style="background-color: #27ae60;"></button>
+            <button class="color-option" data-color="#8e44ad" style="background-color: #8e44ad;"></button>
+            <button class="color-option" data-color="#f1c40f" style="background-color: #f1c40f;"></button>
+        </div>
+    </div>
     <header>
         <nav class="main-nav">
             <div class="logo">
-                <span>TaxiSûr</span>
+                <a href="#accueil"><span>TaxiSûr</span></a>
             </div>
 
             <button class="hamburger-menu" aria-label="Menu">
@@ -34,7 +48,7 @@
 
     <main>
         <section id="accueil" class="hero">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-up">
                 <h1>Votre taxi à Lyon 24h/24 et 7j/7</h1>
                 <p>Transport professionnel, confortable et ponctuel dans toute la région lyonnaise</p>
                 <div class="hero-buttons">
@@ -46,28 +60,28 @@
 
         <section id="services" class="services">
             <h2>Nos Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
+            <div class="services-grid" data-aos="fade-up">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="images/Taxis_Conventionnes_Ile_de_France.png" alt="Taxi Conventionné" class="service-icon">
-                    <h3>Courses Conventionnées</h3>
+                    <h3 class="title-medical">Courses Conventionnées</h3>
                     <p>Transport médical conventionné avec réservation simple</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="images/Fichier 1bnagba.png" alt="Courses Classiques" class="service-icon">
                     <h3>Courses Classiques</h3>
                     <p>Transport standard avec simulation de prix</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="images/Fichier 3bnagba.png" alt="Transport de Groupe" class="service-icon">
                     <h3>Courses de Groupe</h3>
                     <p>Véhicule adapté de 4 à 8 personnes</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-wheelchair service-icon"></i>
                     <h3>Transport TPMR</h3>
                     <p>Véhicule adapté aux personnes à mobilité réduite</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="images/Fichier 2bnagba.png" alt="Mise à Disposition" class="service-icon">
                     <h3>Mise à Disposition</h3>
                     <p>Location de taxi à la journée</p>
@@ -110,7 +124,7 @@
 
         <section id="zones" class="zones">
             <h2>Zones Desservies</h2>
-            <div class="zones-content">
+            <div class="zones-content" data-aos="fade-up">
                 <div class="map-container">
                     <div id="zonesMap" class="map"></div>
                 </div>
@@ -143,25 +157,25 @@
 
         <section id="reservation" class="booking-form">
             <h2>Réservation en ligne</h2>
-            <form id="reservationForm" class="form-grid">
+            <form id="reservationForm" class="form-grid" data-aos="fade-up">
                 <!-- Sélection du service -->
                 <div class="form-group service-selection form-full-width">
                     <label>Type de service</label>
                     <div class="service-cards">
-                        <div class="service-choice-card">
-                            <input type="radio" id="service-standard" name="service" value="standard" required>
-                            <label for="service-standard">
-                                <img src="images/Fichier 1bnagba.png" alt="Courses Standard" class="service-choice-icon">
-                                <h4>Courses Standard</h4>
-                                <p>1-4 personnes</p>
-                            </label>
-                        </div>
                         <div class="service-choice-card" data-service="medical">
                             <input type="radio" id="service-medical" name="service" value="medical">
                             <label for="service-medical">
                                 <img src="images/Taxis_Conventionnes_Ile_de_France.png" alt="Courses Conventionnées" class="service-choice-icon">
                                 <h4>Courses conventionnées</h4>
                                 <p>Véhicule adapté</p>
+                            </label>
+                        </div>
+                        <div class="service-choice-card">
+                            <input type="radio" id="service-standard" name="service" value="standard" required>
+                            <label for="service-standard">
+                                <img src="images/Fichier 1bnagba.png" alt="Courses Standard" class="service-choice-icon">
+                                <h4>Courses Standard</h4>
+                                <p>1-4 personnes</p>
                             </label>
                         </div>
                         <div class="service-choice-card">
@@ -305,28 +319,23 @@
 
         <section id="contact" class="contact">
             <h2>Contact</h2>
-            <div class="contact-content">
+            <div class="contact-content" data-aos="fade-up">
                 <div class="contact-info">
-                    <div class="contact-card">
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
                         <i class="fas fa-phone-alt"></i>
                         <h3>Téléphone</h3>
                         <p><a href="tel:+33400000000">06 34 37 42 45</a></p>
                     </div>
-                    <div class="contact-card">
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
                         <i class="fas fa-envelope"></i>
                         <h3>Email</h3>
                         <p><a href="mailto:contact@lyontaxi.fr">taxilyonservice@gmail.com</a></p>
                     </div>
-                    <div class="contact-card">
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Adresse</h3>
                         <p>Lyon et sa région</p>
                     </div>
-                </div>
-                <div class="social-media">
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </section>
@@ -341,16 +350,12 @@
             <div class="footer-links">
                 <h4>Liens rapides</h4>
                 <ul>
+                    <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#tarifs">Tarifs</a></li>
-                    <li><a href="#zones">Zones desservies</a></li>
-                    <li><a href="#reservation">Réserver</a></li>
+                    <li><a href="#zones">Zones</a></li>
+                    <li><a href="#reservation">Réservation</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <p><i class="fas fa-phone"></i> 06 34 37 42 45</p>
-                <p><i class="fas fa-envelope"></i> taxilyonservice@gmail.com</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -363,6 +368,14 @@
         (function() {
             emailjs.init("M2UfbxYZ-JsEkdC36");
         })();
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
     </script>
     <script src="script.js"></script>
     <!-- Google Maps JavaScript API -->

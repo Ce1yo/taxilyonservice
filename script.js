@@ -1,3 +1,70 @@
+// Gestion du sélecteur de couleurs
+const colorPickerToggle = document.querySelector('.color-picker-toggle');
+const colorOptions = document.querySelector('.color-options');
+const colorButtons = document.querySelectorAll('.color-option');
+
+// Ouvrir/fermer le sélecteur de couleurs
+colorPickerToggle.addEventListener('click', () => {
+    colorOptions.classList.toggle('active');
+});
+
+// Fermer le sélecteur si on clique ailleurs
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.color-picker')) {
+        colorOptions.classList.remove('active');
+    }
+});
+
+// Changer la couleur du site et les icônes si nécessaire
+colorButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const color = button.dataset.color;
+        document.documentElement.style.setProperty('--primary-color', color);
+        colorOptions.classList.remove('active');
+
+        // Sélectionner toutes les icônes à changer
+        const standardIcons = document.querySelectorAll('[alt="Courses Classiques"], [alt="Courses Standard"]');
+        const groupeIcons = document.querySelectorAll('[alt="Transport de Groupe"], [alt="Courses de groupe"]');
+        const journeeIcons = document.querySelectorAll('[alt="Mise à Disposition"], [alt="Journée complète"]');
+        const wheelchairIcons = document.querySelectorAll('.fa-wheelchair');
+
+        if (color === '#27ae60') {
+            // Changer les icônes pour la version verte
+            standardIcons.forEach(icon => icon.src = 'images/SpBHJr.tifbnagba.png');
+            groupeIcons.forEach(icon => icon.src = 'images/Fichier 5bnagba.png');
+            journeeIcons.forEach(icon => icon.src = 'images/Fichier 4bnagba.png');
+        } else if (color === '#f1c40f') {
+            // Changer les icônes pour la version jaune
+            standardIcons.forEach(icon => icon.src = 'images/SpBHJr.tif (5)bnagba.png');
+            groupeIcons.forEach(icon => icon.src = 'images/Fichier 17bnagba.png');
+            journeeIcons.forEach(icon => icon.src = 'images/Fichier 16bnagba.png');
+        } else if (color === '#c0392b') {
+            // Changer les icônes pour la version rouge
+            standardIcons.forEach(icon => icon.src = 'images/SpBHJr.tif (2)bnagba.png');
+            groupeIcons.forEach(icon => icon.src = 'images/Fichier 8bnagba.png');
+            journeeIcons.forEach(icon => icon.src = 'images/Fichier 7bnagba.png');
+        } else if (color === '#8e44ad') {
+            // Changer les icônes pour la version violette
+            standardIcons.forEach(icon => icon.src = 'images/SpBHJr.tif (4)bnagba.png');
+            groupeIcons.forEach(icon => icon.src = 'images/Fichier 14bnagba.png');
+            journeeIcons.forEach(icon => icon.src = 'images/Fichier 13bnagba.png');
+        } else if (color === '#2c3e50') {
+            // Changer les icônes pour la version bleu foncé
+            standardIcons.forEach(icon => icon.src = 'images/SpBHJr.tif (3)bnagba.png');
+            groupeIcons.forEach(icon => icon.src = 'images/Fichier 11bnagba.png');
+            journeeIcons.forEach(icon => icon.src = 'images/Fichier 10bnagba.png');
+        } else {
+            // Remettre les icônes d'origine (pour le bleu clair)
+            standardIcons.forEach(icon => icon.src = 'images/Fichier 1bnagba.png');
+            groupeIcons.forEach(icon => icon.src = 'images/Fichier 3bnagba.png');
+            journeeIcons.forEach(icon => icon.src = 'images/Fichier 2bnagba.png');
+        }
+
+        // Changer la couleur du fauteuil roulant selon la couleur sélectionnée
+        wheelchairIcons.forEach(icon => icon.style.color = color);
+    });
+});
+
 // Gestion du menu mobile
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const navLinks = document.querySelector('.nav-links');

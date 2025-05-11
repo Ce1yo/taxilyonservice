@@ -1,3 +1,66 @@
+/* Styles pour le sélecteur de couleurs */
+.color-picker {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.color-picker-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--white);
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.color-picker-toggle:hover {
+    transform: scale(1.1);
+}
+
+.color-options {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    background: var(--white);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.color-options.active {
+    display: flex;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.2);
+}
+
+/* Fin des styles pour le sélecteur de couleurs */
+
 :root {
     --primary-color: #32348e;
     --secondary-color: #040303;
@@ -27,6 +90,12 @@ body {
 .service-selection {
     margin: 2rem 0;
 }
+
+/* Style spécifique pour le titre des courses conventionnées */
+.title-medical {
+    color: #32348e !important;
+}
+
 
 .service-cards {
     display: grid;
@@ -237,6 +306,10 @@ header {
     .hamburger-menu.active .bar:nth-child(3) {
         transform: rotate(-45deg) translate(8px, -6px);
     }
+}
+
+.logo a {
+    text-decoration: none;
 }
 
 .logo span {
