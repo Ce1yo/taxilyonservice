@@ -314,28 +314,15 @@ function calculateTaxiFare(distance, serviceType) {
         isSundayService = isSunday(selectedDate);
     }
 
+    // Prix de base pour tous les services (hors médical et journée)
+    const baseFare = 5; // 5€ de prise en charge
+
+    // Déterminer si on applique le tarif de nuit/dimanche
+    const isSpecialRate = isNightTime || isSundayService;
+    
     // Prix selon le type de service
     let finalPrice = 0;
     switch(serviceType) {
-        case 'tpmr':
-            // Prix de base et prix par kilomètre pour TPMR (plus élevé car véhicule spécialisé)
-            const tpmrBaseFare = 5;
-            const tpmrPerKmFare = isNightTime ? 3.5 : 2.5;
-            finalPrice = Math.ceil(tpmrBaseFare + (distance * tpmrPerKmFare));
-            break;
-
-        case 'standard':
-            // Prix de base et prix par kilomètre pour service standard
-            const standardBaseFare = 2;
-            const standardPerKmFare = isNightTime ? 3 : 2;
-            finalPrice = Math.ceil(standardBaseFare + (distance * standardPerKmFare));
-
-        case 'groupe':
-            // Prix de base et prix par kilomètre pour groupe (plus élevé)
-            const groupBaseFare = 5;
-            const groupPerKmFare = isNightTime ? 3 : 2;
-            finalPrice = Math.ceil(groupBaseFare + (distance * groupPerKmFare));
-
         case 'medical':
             // Pour le transport médical, on retourne null pour afficher un message spécial
             return null;
@@ -344,14 +331,13 @@ function calculateTaxiFare(distance, serviceType) {
             // Pour la journée complète, on retourne null pour afficher "Sur devis"
             return null;
 
+        case 'standard':
+        case 'groupe':
         default:
-            const defaultPerKmFare = isNightTime ? 3 : 2;
-            finalPrice = Math.ceil(2 + (distance * defaultPerKmFare));
-    }
-
-    // Ajouter le supplément dimanche si applicable
-    if (isSundayService) {
-        finalPrice += 4;
+            // Application du tarif standard
+            const kmFare = isSpecialRate ? 3 : 2; // 3€/km la nuit et dimanche, 2€/km en journée
+            finalPrice = Math.ceil(baseFare + (distance * kmFare));
+            break;
     }
 
     return finalPrice;
@@ -401,7 +387,7 @@ function updateDistanceAndPrice(distance) {
             messages.push('Tarif de jour 7h-19h');
         }
         if (isSundayService) {
-            messages.push('Supplément dimanche +4€');
+            messages.push('Tarif dimanche appliqué');
         }
         timeMessage = ` (${messages.join(', ')})`;
     }

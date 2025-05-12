@@ -48,9 +48,12 @@
 
     <main>
         <section id="accueil" class="hero">
+            <div class="hero-badge">
+                <img src="images/Taxis_Conventionnes_Ile_de_France.png" alt="Taxi Conventionné" class="badge-icon">
+            </div>
             <div class="hero-content" data-aos="fade-up">
                 <h1>Votre taxi à Lyon 24h/24 et 7j/7</h1>
-                <p>Transport professionnel, confortable et ponctuel dans toute la région lyonnaise</p>
+                <p>Transport conventionnés, transport PMR, professionnel, confortable et ponctuel dans toute la région lyonnaise</p>
                 <div class="hero-buttons">
                     <a href="#reservation" class="btn-primary">Réserver maintenant</a>
                     <a href="tel:+33634374245" class="btn-secondary"><i class="fas fa-phone"></i> Appeler</a>
@@ -62,9 +65,12 @@
             <h2>Nos Services</h2>
             <div class="services-grid" data-aos="fade-up">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/Taxis_Conventionnes_Ile_de_France.png" alt="Taxi Conventionné" class="service-icon">
-                    <h3 class="title-medical">Courses Conventionnées</h3>
-                    <p>Transport médical conventionné avec réservation simple</p>
+                    <div class="service-icons">
+                        <img src="images/Taxis_Conventionnes_Ile_de_France.png" alt="Taxi Conventionné" class="service-icon">
+                        <i class="fas fa-wheelchair service-icon"></i>
+                    </div>
+                    <h3 class="title-medical">Courses Conventionnées & TPMR</h3>
+                    <p>Transport médical conventionné et personnes à mobilité réduite</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="images/Fichier 1bnagba.png" alt="Courses Classiques" class="service-icon">
@@ -75,11 +81,6 @@
                     <img src="images/Fichier 3bnagba.png" alt="Transport de Groupe" class="service-icon">
                     <h3>Courses de Groupe</h3>
                     <p>Véhicule adapté de 4 à 8 personnes</p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-wheelchair service-icon"></i>
-                    <h3>Transport TPMR</h3>
-                    <p>Véhicule adapté aux personnes à mobilité réduite</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="images/Fichier 2bnagba.png" alt="Mise à Disposition" class="service-icon">
@@ -103,7 +104,7 @@
                 </div>
                 <div class="tarif-card">
                     <h3>Aéroport</h3>
-                    <p class="prix">À partir de 50€</p>
+                    <p class="prix">À partir de 40€</p>
                     <ul>
                         <li>Prix forfaitaire</li>
                         <li>Suivi des vols</li>
@@ -159,9 +160,12 @@
                         <div class="service-choice-card" data-service="medical">
                             <input type="radio" id="service-medical" name="service" value="medical">
                             <label for="service-medical">
-                                <img src="images/Taxis_Conventionnes_Ile_de_France.png" alt="Courses Conventionnées" class="service-choice-icon">
-                                <h4>Courses conventionnées</h4>
-                                <p>Véhicule adapté</p>
+                                <div class="service-choice-icons">
+                                    <img src="images/Taxis_Conventionnes_Ile_de_France.png" alt="Courses Conventionnées" class="service-choice-icon">
+                                    <i class="fas fa-wheelchair service-choice-icon"></i>
+                                </div>
+                                <h4>Courses conventionnées & TPMR</h4>
+                                <p>Transport médical et PMR</p>
                             </label>
                         </div>
                         <div class="service-choice-card">
@@ -178,14 +182,6 @@
                                 <img src="images/Fichier 3bnagba.png" alt="Courses de groupe" class="service-choice-icon">
                                 <h4>Courses de groupe</h4>
                                 <p>Véhicule 4-8 personnes</p>
-                            </label>
-                        </div>
-                        <div class="service-choice-card">
-                            <input type="radio" id="service-tpmr" name="service" value="tpmr">
-                            <label for="service-tpmr">
-                                <i class="fas fa-wheelchair service-choice-icon"></i>
-                                <h4>Transport TPMR</h4>
-                                <p>Véhicule adapté PMR</p>
                             </label>
                         </div>
                         <div class="service-choice-card">
@@ -291,16 +287,20 @@
                 <h3>Modes de paiement acceptés</h3>
                 <div class="payment-icons">
                     <div class="payment-icon">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Carte Bancaire</span>
+                        <i class="fab fa-cc-visa"></i>
+                        <span>Visa</span>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-mastercard"></i>
+                        <span>Mastercard</span>
+                    </div>
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-amex"></i>
+                        <span>American Express</span>
                     </div>
                     <div class="payment-icon">
                         <i class="fas fa-money-bill-wave"></i>
                         <span>Espèces</span>
-                    </div>
-                    <div class="payment-icon">
-                        <i class="fas fa-money-check"></i>
-                        <span>Chèque</span>
                     </div>
                     <div class="payment-icon">
                         <i class="fas fa-mobile-alt"></i>
