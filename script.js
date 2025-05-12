@@ -413,8 +413,18 @@ function updateDistanceAndPrice(distance) {
     }
 }
 
+// Fonction pour sélectionner automatiquement le service conventionné
+function selectMedicalService() {
+    const medicalRadio = document.getElementById('service-medical');
+    if (medicalRadio) {
+        medicalRadio.checked = true;
+        medicalRadio.dispatchEvent(new Event('change'));
+    }
+}
+
 // La fonction initGoogleMaps sera appelée automatiquement par l'API Google Maps
 window.initGoogleMaps = initGoogleMaps;
+window.selectMedicalService = selectMedicalService;
 
 // Fonction pour calculer la distance et mettre à jour le prix
 function calculateDistanceAndPrice() {

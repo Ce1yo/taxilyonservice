@@ -722,9 +722,22 @@ header {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
+    justify-items: center;
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        padding: 0.5rem;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
 }
 
 @media (min-width: 768px) {
